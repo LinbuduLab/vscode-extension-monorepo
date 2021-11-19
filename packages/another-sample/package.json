@@ -1,0 +1,42 @@
+{
+  "name": "another-sample",
+  "version": "0.0.1",
+  "description": "",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc --watch",
+    "check": "tsc --noEmit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LinbuduLab/vscode-extension-monorepo"
+  },
+  "bugs": {
+    "url": "https://github.com/LinbuduLab/vscode-extension-monorepo/issues"
+  },
+  "homepage": "https://github.com/LinbuduLab/vscode-extension-monorepo#readme",
+  "main": "./src/index.js",
+  "publisher": "linbudu599",
+  "engines": {
+    "vscode": "^1.27.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "contributes": {
+    "commands": [],
+    "keybindings": [],
+    "menus": {
+      "editor/title": [],
+      "editor/title/context": [],
+      "editor/context": [],
+      "explorer/context": []
+    },
+    "snippets": [],
+    "viewsContainers": [],
+    "views": [],
+    "iconThemes": []
+  }
+}
