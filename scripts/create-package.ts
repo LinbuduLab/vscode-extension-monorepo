@@ -13,23 +13,56 @@ const getInitialContent = (pkg: string) => `
 console.log('pkg');
 `;
 
+const BASE_GITHUB_URL =
+  "https://github.com/LinbuduLab/vscode-extension-monorepo";
+
 const getPackageJsonContent = (pkg: string) => ({
   name: pkg,
   version: "0.0.1",
   description: "",
-  main: "./src/index.js",
   license: "MIT",
   scripts: {
     build: "tsc",
     watch: "tsc --watch",
     check: "tsc --noEmit",
   },
+  repository: {
+    type: "git",
+    url: `git+${BASE_GITHUB_URL}`,
+  },
+  bugs: {
+    url: `${BASE_GITHUB_URL}/issues`,
+  },
+  homepage: `${BASE_GITHUB_URL}#readme`,
+  main: "./dist/index.js",
+  publisher: "linbudu599",
+  engines: {
+    vscode: "^1.27.0",
+  },
+  categories: ["Other"],
+  activationEvents: [],
+  contributes: {
+    commands: [],
+    keybindings: [],
+    menus: {
+      "editor/title": [],
+      "editor/title/context": [],
+      "editor/context": [],
+      "explorer/context": [],
+    },
+    snippets: [],
+    viewsContainers: [],
+    views: [],
+    iconThemes: [],
+  },
 });
 
 const getTSConfigContent = (pkg: string) => ({
   extends: "../../tsconfig.base.json",
-  compilerOptions: {},
-  include: ["src"],
+  compilerOptions: {
+    outDir: "dist",
+  },
+  include: ["src/**/*"],
 });
 
 (async () => {
