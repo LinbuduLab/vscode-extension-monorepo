@@ -26,17 +26,6 @@ export function activate(context: vscode.ExtensionContext) {
 
   // 所有注册类的 API，执行完毕后都需要这么处理
   context.subscriptions.push(disposable);
-
-  context.subscriptions.push(
-    vscode.commands.registerCommand(
-      "extension.helloWorld.getCurrentFilePath",
-      (uri) => {
-        vscode.window.showInformationMessage(
-          `当前文件(夹)路径是：${uri ? uri.path : "空"}`
-        );
-      }
-    )
-  );
 }
 
 export function deactivate() {

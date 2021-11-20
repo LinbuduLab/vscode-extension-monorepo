@@ -6,7 +6,12 @@
   "scripts": {
     "build": "tsc",
     "watch": "tsc --watch",
-    "check": "tsc --noEmit"
+    "check": "tsc --noEmit",
+    "pkg": "vsce package",
+    "pub": "vsce publish",
+    "pub:patch": "vsce publish patch",
+    "pub:minor": "vsce publish minor",
+    "pub:major": "vsce publish patch"
   },
   "repository": {
     "type": "git",
@@ -16,7 +21,7 @@
     "url": "https://github.com/LinbuduLab/vscode-extension-monorepo/issues"
   },
   "homepage": "https://github.com/LinbuduLab/vscode-extension-monorepo#readme",
-  "main": "./src/index.js",
+  "main": "./dist/index.js",
   "publisher": "linbudu599",
   "engines": {
     "vscode": "^1.27.0"
@@ -24,19 +29,23 @@
   "categories": [
     "Other"
   ],
-  "activationEvents": [],
+  "activationEvents": [
+    "onCommand:extension.helloWorld"
+  ],
   "contributes": {
-    "commands": [],
-    "keybindings": [],
-    "menus": {
-      "editor/title": [],
-      "editor/title/context": [],
-      "editor/context": [],
-      "explorer/context": []
-    },
-    "snippets": [],
-    "viewsContainers": [],
-    "views": [],
-    "iconThemes": []
+    "commands": [
+      {
+        "command": "extension.helloWorld",
+        "title": "Hello World"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "extension.helloWorld",
+        "key": "ctrl+f10",
+        "mac": "cmd+f10",
+        "when": "editorTextFocus"
+      }
+    ]
   }
 }

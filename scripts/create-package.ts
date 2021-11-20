@@ -25,6 +25,11 @@ const getPackageJsonContent = (pkg: string) => ({
     build: "tsc",
     watch: "tsc --watch",
     check: "tsc --noEmit",
+    pkg: "vsce package",
+    pub: "vsce publish",
+    "pub:patch": "vsce publish patch",
+    "pub:minor": "vsce publish minor",
+    "pub:major": "vsce publish patch",
   },
   repository: {
     type: "git",
@@ -80,9 +85,12 @@ const getTSConfigContent = (pkg: string) => ({
   const initialFile = path.join(packageDir, "src", "index.ts");
   const packageFile = path.join(packageDir, "package.json");
   const tsconfigFile = path.join(packageDir, "tsconfig.json");
+  const licenseFile = path.join(packageDir, "LICENSE");
+  const projectLicenseFile = path.join(process.cwd(), "LICENSE");
 
   fs.ensureDirSync(packageDir);
   fs.ensureFileSync(initialFile);
+  fs.ensureFileSync(licenseFile);
 
   fs.writeFileSync(initialFile, getInitialContent(pkgName));
   fs.writeFileSync(
@@ -93,6 +101,7 @@ const getTSConfigContent = (pkg: string) => ({
     tsconfigFile,
     JSON.stringify(getTSConfigContent(pkgName), null, 2)
   );
+  fs.writeFileSync(licenseFile, fs.readFileSync(projectLicenseFile, "utf-8"));
 
   consola.success(`Create ${pkgName}`);
 })();

@@ -6,7 +6,12 @@
   "scripts": {
     "build": "tsc",
     "watch": "tsc --watch",
-    "check": "tsc --noEmit"
+    "check": "tsc --noEmit",
+    "pkg": "vsce package",
+    "pub": "vsce publish",
+    "pub:patch": "vsce publish patch",
+    "pub:minor": "vsce publish minor",
+    "pub:major": "vsce publish patch"
   },
   "repository": {
     "type": "git",
