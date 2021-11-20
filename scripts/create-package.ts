@@ -16,6 +16,8 @@ console.log('pkg');
 const BASE_GITHUB_URL =
   "https://github.com/LinbuduLab/vscode-extension-monorepo";
 
+const PUBLISHER = "linbudu599";
+
 const getPackageJsonContent = (pkg: string) => ({
   name: pkg,
   version: "0.0.1",
@@ -40,7 +42,8 @@ const getPackageJsonContent = (pkg: string) => ({
   },
   homepage: `${BASE_GITHUB_URL}#readme`,
   main: "./dist/index.js",
-  publisher: "linbudu599",
+  authort: PUBLISHER,
+  publisher: PUBLISHER,
   engines: {
     vscode: "^1.27.0",
   },
