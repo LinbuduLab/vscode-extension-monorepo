@@ -2,6 +2,8 @@
 
 Develop VS Code extension in pnpm workspace.
 
+> **In fact, I'm just getting started with VS Code Extension, and this template is really just for exploring the various APIs of the extension separately, so if you want to develop fully functional extensions, this template is probably far from adequate, but PR is welcome!**
+
 ## Get Started
 
 To use this template, you will need to:
