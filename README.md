@@ -6,7 +6,7 @@ Develop VS Code extension in pnpm workspace.
 
 To use this template, you will need to:
 
-- Update [create-package script](scripts/create-package.ts) content, including `BASE_GITHUB_URL`, `publisher`, or any propertits you want to customize.
+- Update [create-package script](scripts/create-package.ts) content, including `BASE_GITHUB_URL`, `PUBLISHER`, or any propertits you want to customize.
 
   ```typescript
   const BASE_GITHUB_URL =
